@@ -1,5 +1,7 @@
 package pairmatching.model;
 
+import pairmatching.handler.ExceptionMessages;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,10 +36,13 @@ public enum LevelAndMissions {
         return missions;
     }
 
-    //TODO: 체크
-    public boolean isProperLevelAndMission(String level, String mission){
-        LevelAndMissions levelAndMission = missionStorage.get(level);
-        return levelAndMission.getMissions().contains(mission);
+    public static boolean validateProperLevelAndMission(String level, String mission){
+        try{
+            LevelAndMissions levelAndMission = missionStorage.get(level); //TODO: 체크
+            return levelAndMission.getMissions().contains(mission);
+        } catch (Exception e){
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_OPTION_INPUT.getMessage());
+        }
     }
 
 }

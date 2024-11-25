@@ -13,4 +13,17 @@ public enum Option {
         this.optionNumber = optionNumber;
         this.optionContent = optionContent;
     }
+
+    public static boolean isValidOptionNumber(String optionNumber){
+        for (Option option : values()){
+            if (optionNumber.equals(option.optionNumber)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getOptionNumber() {
+        return optionNumber;
+    }
 }
