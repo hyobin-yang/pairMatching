@@ -6,7 +6,6 @@ import pairmatching.handler.ExceptionMessages;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: 페어로 만난 적 있는 크루 제외
 
 public class PairMatchingService {
     private int tryCount = 0;
@@ -23,15 +22,21 @@ public class PairMatchingService {
 
         if (countCrew % 2 == 0){
             for (int i = 0; i < shuffledCrew.size(); i+=2){
-                matchingResult.add(List.of(shuffledCrew.get(i), shuffledCrew.get(i+1)));
+                List<String> list = new ArrayList<>();
+                list.add(shuffledCrew.get(i));
+                list.add(shuffledCrew.get(i+1));
+                matchingResult.add(list);
             }
         }
 
         if (countCrew % 2 != 0){
             for (int i = 0; i < shuffledCrew.size()-1; i+=2){
-                matchingResult.add(List.of(shuffledCrew.get(i), shuffledCrew.get(i+1)));
+                List<String> list = new ArrayList<>();
+                list.add(shuffledCrew.get(i));
+                list.add(shuffledCrew.get(i+1));
+                matchingResult.add(list);
             }
-            matchingResult.getLast().add(shuffledCrew.getLast());
+            matchingResult.getLast().add(shuffledCrew.get(countCrew - 1));
         }
         return matchingResult;
     }

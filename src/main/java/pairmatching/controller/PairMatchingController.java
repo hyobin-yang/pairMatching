@@ -27,7 +27,6 @@ public class PairMatchingController {
         this.frontendCrews = frontendCrews;
     }
 
-
     public void run(){
         while(true){
             String optionNumber = RetryHandler.retryOnInvalidInput(inputView::chooseNumber);
@@ -143,7 +142,7 @@ public class PairMatchingController {
         while(true){
             ChosenOption chosenOption = RetryHandler.retryOnInvalidInput(this::getChosenOption);
             if (checkParingAlreadyExist(chosenOption)){
-                outputView.showResultOfPairMatching(getParingInformationOfOption(chosenOption));
+                outputView.showResultOfPairMatching(Objects.requireNonNull(getParingInformationOfOption(chosenOption)));
                 break;
             }
             throw new IllegalArgumentException(ExceptionMessages.NOT_EXIST_MATCHING_INFORMATION.getMessage());

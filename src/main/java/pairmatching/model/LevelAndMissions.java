@@ -44,5 +44,4 @@ public enum LevelAndMissions {
             throw new IllegalArgumentException(ExceptionMessages.INVALID_OPTION_INPUT.getMessage());
         }
     }
-
 }

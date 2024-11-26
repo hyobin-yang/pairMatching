@@ -3,7 +3,7 @@ package pairmatching.view;
 import java.util.List;
 
 public class OutputView {
-    private static final String JOIN_DELIMITER_OF_PARING = ":";
+    private static final String JOIN_DELIMITER_OF_PARING = " : ";
 
     // TODO: enum 클래스 이용해서 출력
     public void showParingOptions(){
@@ -21,7 +21,7 @@ public class OutputView {
     public void showResultOfPairMatching(List<List<String>> result){
         System.out.println("페어 매칭 결과입니다.");
         for (List<String> pair : result){
-            System.out.println(String.join(" : ", pair));
+            System.out.println(String.join(JOIN_DELIMITER_OF_PARING, pair));
         }
     }
 
