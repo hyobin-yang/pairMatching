@@ -1,6 +1,6 @@
 package pairmatching.model;
 
-public enum Option {
+public enum MenuOption {
     FIRST("1", "페어 매칭"),
     SECOND("2", "페어 조회"),
     THIRD("3", "페어 초기화"),
@@ -9,14 +9,14 @@ public enum Option {
     private final String optionNumber;
     private final String optionContent;
 
-    Option(String optionNumber, String optionContent) {
+    MenuOption(String optionNumber, String optionContent) {
         this.optionNumber = optionNumber;
         this.optionContent = optionContent;
     }
 
-    public static boolean isValidOptionNumber(String optionNumber){
-        for (Option option : values()){
-            if (optionNumber.equals(option.optionNumber)){
+    public static boolean isValidMenuOption(String optionNumber){
+        for (MenuOption menuOption : values()){
+            if (optionNumber.equals(menuOption.optionNumber)){
                 return true;
             }
         }

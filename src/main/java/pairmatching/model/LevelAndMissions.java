@@ -36,12 +36,14 @@ public enum LevelAndMissions {
         return missions;
     }
 
-    public static boolean validateProperLevelAndMission(String level, String mission){
-        try{
-            LevelAndMissions levelAndMission = missionStorage.get(level); //TODO: 체크
-            return levelAndMission.getMissions().contains(mission);
-        } catch (Exception e){
+    public static void validateProperLevelAndMission(String level, String mission){
+        LevelAndMissions levelAndMission = missionStorage.get(level);
+        if (!levelAndMission.getMissions().contains(mission)){
             throw new IllegalArgumentException(ExceptionMessages.INVALID_OPTION_INPUT.getMessage());
         }
+    }
+
+    public static LevelAndMissions getLevelAndMissions(String level){
+        return missionStorage.get(level);
     }
 }

@@ -18,6 +18,13 @@ public enum Part {
         }
     }
 
+    public static Part getPart(String part){
+        if (part.equals(BACKEND.part)){
+            return BACKEND;
+        }
+        return FRONTEND;
+    }
+
     public String getPart(){
         return part;
     }
