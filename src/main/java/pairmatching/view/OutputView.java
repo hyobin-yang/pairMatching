@@ -5,7 +5,6 @@ import java.util.List;
 public class OutputView {
     private static final String JOIN_DELIMITER_OF_PARING = " : ";
 
-    // TODO: enum 클래스 이용해서 출력
     public void showParingOptions(){
         System.out.println("#############################################\n" +
                 "과정: 백엔드 | 프론트엔드\n" +
